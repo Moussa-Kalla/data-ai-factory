@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Nos Services",
+    "caseStudies": "Études de Cas",
+    "blog": "Blog",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Libérez le Potentiel de vos Données",
+      "subtitle": "Experts en Data Science et Intelligence Artificielle, nous transformons vos données en solutions innovantes.",
+      "cta": "Démarrer votre Projet"
+    },
+    "expertise": {
+      "title": "Nos Expertises",
+      "ml": {
+        "title": "Machine Learning",
+        "description": "Solutions d'IA avancées pour optimiser vos processus métier."
+      },
+      "de": {
+        "title": "Data Engineering",
+        "description": "Architecture et intégration de données sur Azure."
+      },
+      "llm": {
+        "title": "LLM",
+        "description": "Modèles de langage avancés pour vos besoins spécifiques."
+      },
+      "bi": {
+        "title": "Power BI",
+        "description": "Dashboards intelligents pour visualiser vos données."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Transformer votre Entreprise ?",
+      "subtitle": "Découvrez comment nos solutions en Data Science et IA peuvent révolutionner votre activité.",
+      "button": "Contactez-nous"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à transformer votre entreprise avec l'IA ? Contactez-nous pour discuter de votre projet.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "success": "Merci pour votre message. Nous vous contacterons dans les plus brefs délais."
+    },
+    "info": {
+      "title": "Informations de contact",
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "hours": {
+        "title": "Horaires d'ouverture",
+        "weekdays": "Lundi - Vendredi : 9h00 - 18h00",
+        "weekend": "Samedi - Dimanche : Fermé"
+      }
+    }
+  }
+}

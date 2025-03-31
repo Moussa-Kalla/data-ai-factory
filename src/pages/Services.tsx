@@ -1,74 +1,218 @@
 import React from 'react';
-import { Brain, Database, LineChart, BarChart } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { 
+  Brain, 
+  Database, 
+  LineChart, 
+  BarChart, 
+  MessageSquareCode, 
+  Smartphone, 
+  Code2, 
+  Palette, 
+  Megaphone, 
+  Cloud, 
+  Shield 
+} from 'lucide-react';
 
 const Services = () => {
+  const { t } = useTranslation();
+
+  const primaryServices = [
+    {
+      icon: Brain,
+      title: "Data Science & Intelligence Artificielle",
+      description: "Solutions avancées d'IA pour optimiser vos processus métier et améliorer la prise de décision.",
+      features: [
+        "Analyse prédictive",
+        "Classification automatique",
+        "Détection d'anomalies",
+        "Systèmes de recommandation"
+      ]
+    },
+    {
+      icon: MessageSquareCode,
+      title: "Machine Learning & LLMs",
+      description: "Développement et déploiement de modèles de Machine Learning et Large Language Models personnalisés.",
+      features: [
+        "Chatbots intelligents",
+        "Analyse de texte",
+        "Génération de contenu",
+        "Fine-tuning de modèles"
+      ]
+    },
+    {
+      icon: Database,
+      title: "Data Engineering & Cloud Computing",
+      description: "Architecture et intégration de données sur Azure pour des pipelines robustes et évolutifs.",
+      features: [
+        "ETL et pipelines de données",
+        "Architecture cloud Azure",
+        "Data lakes et entrepôts",
+        "QPython integration"
+      ]
+    },
+    {
+      icon: BarChart,
+      title: "Power BI & Business Intelligence",
+      description: "Création de tableaux de bord interactifs et visualisations de données percutantes.",
+      features: [
+        "Dashboards personnalisés",
+        "KPIs en temps réel",
+        "Rapports automatisés",
+        "Intégration de données"
+      ]
+    }
+  ];
+
+  const additionalServices = [
+    {
+      icon: Code2,
+      title: "Développement Web",
+      description: "Solutions web modernes et performantes."
+    },
+    {
+      icon: Smartphone,
+      title: "Applications Mobiles",
+      description: "Apps natives et cross-platform."
+    },
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Interfaces utilisateur intuitives."
+    },
+    {
+      icon: Megaphone,
+      title: "Marketing Digital & SEO",
+      description: "Optimisation pour les moteurs de recherche."
+    },
+    {
+      icon: Cloud,
+      title: "Solutions Cloud",
+      description: "Infrastructure cloud scalable."
+    },
+    {
+      icon: Shield,
+      title: "Cybersécurité",
+      description: "Protection des données et systèmes."
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
-    <div className="py-12">
+    <div className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Nos Services</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="text-center mb-16"
+        >
+          <motion.h1 
+            variants={itemVariants}
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Nos Services
+          </motion.h1>
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
             Des solutions innovantes en Data Science et Intelligence Artificielle pour transformer vos données en avantage concurrentiel.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-16"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Expertise Principale</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {primaryServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+              >
+                <service.icon className="h-12 w-12 text-blue-600 dark:text-blue-400 mb-4" />
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600 dark:text-gray-300">
+                      <span className="mr-2">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Services Complémentaires</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {additionalServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center"
+              >
+                <service.icon className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4 mx-auto" />
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-16 text-center"
+        >
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Prêt à Transformer Votre Entreprise ?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Contactez-nous pour discuter de vos besoins en Data Science et IA.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <Brain className="h-12 w-12 text-blue-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Machine Learning</h2>
-            <p className="text-gray-600 mb-4">
-              Développement de solutions d'IA sur mesure pour optimiser vos processus métier et améliorer la prise de décision.
-            </p>
-            <ul className="space-y-2 text-gray-600">
-              <li>• Analyse prédictive</li>
-              <li>• Classification automatique</li>
-              <li>• Détection d'anomalies</li>
-              <li>• Systèmes de recommandation</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <Database className="h-12 w-12 text-purple-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Data Engineering</h2>
-            <p className="text-gray-600 mb-4">
-              Architecture et intégration de données sur Azure pour créer des pipelines de données robustes et évolutifs.
-            </p>
-            <ul className="space-y-2 text-gray-600">
-              <li>• ETL et pipelines de données</li>
-              <li>• Architecture cloud Azure</li>
-              <li>• Data lakes et entrepôts</li>
-              <li>• Optimisation des performances</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <LineChart className="h-12 w-12 text-green-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Large Language Models (LLM)</h2>
-            <p className="text-gray-600 mb-4">
-              Implémentation et personnalisation de modèles de langage avancés pour vos besoins spécifiques.
-            </p>
-            <ul className="space-y-2 text-gray-600">
-              <li>• Chatbots intelligents</li>
-              <li>• Analyse de texte</li>
-              <li>• Génération de contenu</li>
-              <li>• Fine-tuning de modèles</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <BarChart className="h-12 w-12 text-red-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Power BI</h2>
-            <p className="text-gray-600 mb-4">
-              Création de tableaux de bord interactifs et de visualisations de données percutantes.
-            </p>
-            <ul className="space-y-2 text-gray-600">
-              <li>• Dashboards personnalisés</li>
-              <li>• KPIs en temps réel</li>
-              <li>• Rapports automatisés</li>
-              <li>• Intégration de données</li>
-            </ul>
-          </div>
-        </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+            onClick={() => window.location.href = '/contact'}
+          >
+            Démarrer Votre Projet
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );

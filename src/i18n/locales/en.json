@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Our Services",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Unlock Your Data's Potential",
+      "subtitle": "Data Science and Artificial Intelligence experts, transforming your data into innovative solutions.",
+      "cta": "Start Your Project"
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "ml": {
+        "title": "Machine Learning",
+        "description": "Advanced AI solutions to optimize your business processes."
+      },
+      "de": {
+        "title": "Data Engineering",
+        "description": "Data architecture and integration on Azure."
+      },
+      "llm": {
+        "title": "LLM",
+        "description": "Advanced language models for your specific needs."
+      },
+      "bi": {
+        "title": "Power BI",
+        "description": "Intelligent dashboards to visualize your data."
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Business?",
+      "subtitle": "Discover how our Data Science and AI solutions can revolutionize your operations.",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to transform your business with AI? Contact us to discuss your project.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you for your message. We will contact you as soon as possible."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "hours": {
+        "title": "Opening Hours",
+        "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "weekend": "Saturday - Sunday: Closed"
+      }
+    }
+  }
+}

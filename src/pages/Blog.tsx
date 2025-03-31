@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Blog = () => {
   const posts = [
@@ -23,36 +24,42 @@ const Blog = () => {
   ];
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Insights et actualités sur la Data Science, l'IA et les technologies émergentes.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <article key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <motion.article 
+              key={index} 
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
               <img
                 className="h-48 w-full object-cover"
                 src={post.image}
                 alt={post.title}
               />
               <div className="p-6">
-                <div className="text-sm text-blue-600 mb-2">{post.date}</div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">
+                <div className="text-sm text-blue-600 dark:text-blue-400 mb-2">{post.date}</div>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                   {post.title}
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
                 </p>
-                <button className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                <button className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                   Lire la suite →
                 </button>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
