@@ -3,11 +3,11 @@ import React from 'react';
 const CaseStudies = () => {
   const cases = [
     {
-      title: "Optimisation de la Supply Chain",
-      client: "Entreprise de logistique",
-      description: "Mise en place d'un système prédictif pour optimiser la gestion des stocks et la planification des livraisons.",
-      results: ["Réduction de 25% des coûts de stockage", "Amélioration de 30% des délais de livraison"],
-      image: "https://images.unsplash.com/photo-1566843972142-a7fcb2c1680b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      "title": "Analyse de Données via Power BI pour des Décisions Stratégiques",
+      "client": "Entreprises de tous secteurs",
+      "description": "Dashboard Power BI conçu pour l'analyse approfondie des données d'entreprise, fournissant des insights actionnables pour des prises de décisions stratégiques et éclairées, quel que soit le secteur d'activité.",
+      "results": ["Prise de décision basée sur des données concrètes et pertinentes", "Amélioration de la performance globale de l'entreprise grâce à une meilleure compréhension des données"],
+      image: "https://www.kanbanbox.com/wp-content/uploads/2022/07/KanbanBOX_ekanban_Business_Intelligence_Con_Power_BI_2.png"
     },
     {
       title: "Assistant Virtuel Intelligent",
