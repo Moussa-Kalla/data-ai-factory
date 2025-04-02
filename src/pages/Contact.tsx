@@ -77,10 +77,10 @@ const Contact = () => {
                   <div className="ml-4">
                     <h3 className="font-semibold text-gray-900 dark:text-white">{t('contact.info.email')}</h3>
                     <a 
-                      href="mailto:data.ai.factory@gmail.com"
+                      href="mailto:contact.bayanai@gmail.com"
                       className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
-                      data.ai.factory@gmail.com
+                      contact.bayanai@gmail.com
                     </a>
                   </div>
                 </div>

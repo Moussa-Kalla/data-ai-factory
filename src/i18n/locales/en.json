@@ -38,6 +38,12 @@
       "button": "Contact Us"
     }
   },
+  "footer": {
+    "description": "Expert in consulting and services in data science and artificial intelligence. We help companies harness the potential of their data.",
+    "navigation": "Navigation",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 BayanAI. All rights reserved."
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Ready to transform your business with AI? Contact us to discuss your project.",
@@ -47,7 +53,7 @@
       "subject": "Subject",
       "message": "Message",
       "submit": "Send Message",
-      "success": "Thank you for your message. We will contact you as soon as possible."
+      "success": "Thank you for your message. We will contact you shortly."
     },
     "info": {
       "title": "Contact Information",
@@ -58,6 +64,27 @@
         "title": "Opening Hours",
         "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
         "weekend": "Saturday - Sunday: Closed"
+      }
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Discover how we transform challenges into opportunities",
+    "viewAll": "View all case studies",
+    "categories": {
+      "agriculture": "Agriculture",
+      "education": "Education",
+      "health": "Healthcare"
+    },
+    "cases": {
+      "agriculture": {
+        "title": "Agricultural Yield Optimization in Niger"
+      },
+      "education": {
+        "title": "Personalized Learning in Schools"
+      },
+      "health": {
+        "title": "Telemedicine for Rural Areas"
       }
     }
   }

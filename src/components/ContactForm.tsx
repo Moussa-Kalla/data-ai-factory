@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const { t } = useTranslation();
+  const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -11,19 +13,34 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
-    setFormState({ name: '', email: '', subject: '', message: '' });
+    
+    try {
+      await emailjs.sendForm(
+        'service_bayanai', // Service ID from EmailJS
+        'template_bayanai', // Template ID from EmailJS
+        form.current!,
+        'YOUR_PUBLIC_KEY' // Public Key from EmailJS
+      );
+
+      setIsSubmitted(true);
+      setIsError(false);
+      setFormState({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setIsError(true);
+      setTimeout(() => setIsError(false), 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
       ...formState,
-      [e.target.id]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
@@ -40,9 +57,19 @@ const ContactForm = () => {
             {t('contact.form.success')}
           </motion.div>
         )}
+        {isError && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="absolute top-0 left-0 right-0 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 p-4 rounded-md mb-4"
+          >
+            Une erreur s'est produite. Veuillez réessayer plus tard.
+          </motion.div>
+        )}
       </AnimatePresence>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form ref={form} onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {t('contact.form.name')}
@@ -50,6 +77,7 @@ const ContactForm = () => {
           <input
             type="text"
             id="name"
+            name="name"
             value={formState.name}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
@@ -64,6 +92,7 @@ const ContactForm = () => {
           <input
             type="email"
             id="email"
+            name="email"
             value={formState.email}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
@@ -78,6 +107,7 @@ const ContactForm = () => {
           <input
             type="text"
             id="subject"
+            name="subject"
             value={formState.subject}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
@@ -91,6 +121,7 @@ const ContactForm = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={4}
             value={formState.message}
             onChange={handleChange}
@@ -107,6 +138,13 @@ const ContactForm = () => {
         >
           {t('contact.form.submit')}
         </motion.button>
+
+        {/* Hidden input for the recipient email */}
+        <input 
+          type="hidden" 
+          name="to_email" 
+          value="contact.bayanai@gmail.com"
+        />
       </form>
     </div>
   );

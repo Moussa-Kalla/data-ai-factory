@@ -4,22 +4,25 @@ import { motion } from 'framer-motion';
 const Blog = () => {
   const posts = [
     {
-      title: "L'Impact des LLM sur le Service Client",
-      date: "15 Mars 2024",
-      excerpt: "Comment les modèles de langage transforment l'expérience client et optimisent les processus de support.",
-      image: "https://images.unsplash.com/photo-1596720426673-e4e14290f0cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "RAG (Génération Augmentée de Récupération) dans Recherche Azure AI",
+      date: "05/09/2024",
+      excerpt: "La RAG (Retrieval Augmented Generation) est une architecture qui augmente les fonctionnalités d'un grand modèle de langage (LLM) (comme ChatGPT) en ajoutant un système de récupération d'informations qui fournit les données. L'ajout d'un système de récupération d'informations vous permet de contrôler la fourniture de données utilisées par un LLM lorsqu'il formule une réponse.",
+      image: "https://i0.wp.com/tech-lab.sios.jp/wp-content/uploads/2024/09/logo.png?w=1920&ssl=1",
+      link: "https://learn.microsoft.com/fr-fr/azure/search/retrieval-augmented-generation-overview"
     },
     {
-      title: "Data Engineering sur Azure : Bonnes Pratiques",
-      date: "10 Mars 2024",
-      excerpt: "Guide complet pour construire des architectures de données robustes et évolutives sur Azure.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      title: "Devenir un Data Scientist",
+      date: "01/03/2024",
+      excerpt: "Spécialistes des données, les scientifiques des données contribuent à recueillir, analyser et interpréter de grands volumes de données afin de résoudre des problèmes d'entreprise complexes. Ils combinent les statistiques, les sciences informatiques et un sens aigu des opérations pour aider les organisations à approfondir leur analyse et à atteindre leurs objectifs.",
+      image: "https://cdn.prod.website-files.com/614d804d8ff4f816c408fdd2/632b0a5aaf13b1f3aac23008_data-science.jpg",
+      link: "https://learn.microsoft.com/fr-fr/training/career-paths/data-scientist"
     },
     {
       title: "Power BI : Au-delà des Tableaux de Bord",
-      date: "5 Mars 2024",
-      excerpt: "Techniques avancées pour créer des visualisations de données impactantes avec Power BI.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      date: "28/02/2024",
+      excerpt: "Transformez vos données en visuels grâce à des outils avancés d'analyse des données, des fonctionnalités d'IA et un outil de création de rapports convivial. Créez une culture basée sur les données avec le décisionnel pour tous.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "https://www.microsoft.com/fr-fr/power-platform/products/power-bi"
     }
   ];
 
@@ -55,9 +58,14 @@ const Blog = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
                 </p>
-                <button className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                <a 
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                >
                   Lire la suite →
-                </button>
+                </a>
               </div>
             </motion.article>
           ))}
