@@ -38,6 +38,12 @@
       "button": "Contactez-nous"
     }
   },
+  "footer": {
+    "description": "Expert en conseil et services en data science et intelligence artificielle. Nous aidons les entreprises à exploiter le potentiel de leurs données.",
+    "navigation": "Navigation",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2025 BayanAI. Tous droits réservés."
+  },
   "contact": {
     "title": "Contactez-nous",
     "subtitle": "Prêt à transformer votre entreprise avec l'IA ? Contactez-nous pour discuter de votre projet.",
@@ -60,5 +66,27 @@
         "weekend": "Samedi - Dimanche : Fermé"
       }
     }
+  },
+  "caseStudies": {
+    "title": "Études de Cas",
+    "subtitle": "Découvrez comment nous pourrions aider nos clients à transformer leurs défis en opportunités grâce à l'IA et la Data Science.",
+    "viewAll": "Voir toutes nos études de cas",
+    "categories": {
+      "agriculture": "Agriculture",
+      "education": "Éducation",
+      "health": "Santé"
+    },
+    "cases": {
+      "agriculture": {
+        "title": "Optimisation des Rendements Agricoles au Niger"
+      },
+      "education": {
+        "title": "Apprentissage Personnalisé dans les Écoles"
+      },
+      "health": {
+        "title": "Télémédecine pour les Zones Rurales"
+      }
+    },
+    "results": "Résultats estimés"
   }
 }

@@ -6,24 +6,24 @@ const About = () => {
   const team = [
     {
       name: 'Moussa Kalla',
-      role: 'CEO & Co-Founder',
-      currentPosition: 'Data Scientist & Machine Learning Engineer at TotalEnergies, France',
-      education: 'Degree in Applied Mathematics and Computer Science',
-      expertise: ['Data Science', 'Machine Learning', 'AI', 'Predictive Modeling'],
-      bio: "Moussa Kalla is an experienced Data Scientist and Machine Learning Engineer with a strong background in mathematics, AI, and data analytics. Currently working at TotalEnergies in France, he specializes in designing and implementing advanced AI-driven solutions. His expertise spans predictive modeling, deep learning, and data-driven decision-making, making him a key figure in the AI and data industry.",
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      role: 'PDG & Co-Fondateur',
+      currentPosition: 'Data Scientist & Ingénieur en Machine Learning chez TotalEnergies, France',
+      education: 'Diplôme en Mathématiques Appliquées et Informatique',
+      expertise: ['Data Science', 'Machine Learning', 'IA', 'Modélisation Prédictive'],
+      bio: "Moussa Kalla est un Data Scientist et Ingénieur en Machine Learning expérimenté avec une solide formation en mathématiques, IA et analyse de données. Actuellement en poste chez TotalEnergies en France, il est spécialisé dans la conception et la mise en œuvre de solutions avancées basées sur l'IA. Son expertise couvre la modélisation prédictive, l'apprentissage profond et la prise de décision basée sur les données, faisant de lui une figure clé dans l'industrie de l'IA et des données.",
+      image: 'https://github.com/Moussa-Kalla/data-ai-factory/blob/mk_dev/assets/Moussa.png?raw=true',
       linkedin: 'https://linkedin.com/in/moussa-kalla',
       github: 'https://github.com/Moussa-Kalla',
       icon: Brain
     },
     {
       name: 'Moustapha Maman Sani',
-      role: 'Co-Founder',
-      currentPosition: 'Network Supervisor Engineer at Camusat',
-      education: 'Degree in Computer Science & Telecommunications',
-      expertise: ['Web Development', 'Mobile Development', 'Network Engineering', 'Telecommunications'],
-      bio: "Moustapha Maman Sani is a skilled Web & Mobile Developer as well as a Network & Telecommunications Engineer. With extensive experience in network architecture, system administration, and software development, he currently works as a Network Supervisor Engineer at Camusat. His dual expertise in software development and telecommunications infrastructure allows him to bridge the gap between digital platforms and network systems, ensuring scalable and efficient technological solutions.",
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      role: 'Co-Fondateur',
+      currentPosition: 'Ingénieur Superviseur Réseau chez Camusat',
+      education: 'Diplôme en Informatique & Télécommunications',
+      expertise: ['Développement Web', 'Développement Mobile', 'Ingénierie Réseau', 'Télécommunications'],
+      bio: "Moustapha Maman Sani est un développeur Web & Mobile qualifié ainsi qu'un ingénieur en Réseau & Télécommunications. Fort d'une vaste expérience en architecture réseau, administration système et développement logiciel, il occupe actuellement le poste d'Ingénieur Superviseur Réseau chez Camusat. Sa double expertise en développement logiciel et en infrastructure de télécommunications lui permet de faire le pont entre les plateformes numériques et les systèmes réseau, assurant des solutions technologiques évolutives et efficaces.",
+      image: 'https://github.com/Moussa-Kalla/data-ai-factory/blob/mk_dev/assets/Moustapha.jpeg?raw=true',
       linkedin: 'https://linkedin.com/in/moustapha-maman-sani-abdou-19189aa1',
       icon: Network
     }
@@ -80,28 +80,30 @@ const About = () => {
             <motion.div
               key={member.name}
               variants={itemVariants}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8"
             >
-              <div className="relative">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <member.icon className="absolute bottom-4 right-4 h-8 w-8 text-white" />
-              </div>
-              <div className="p-8">
-                <div className="mb-6">
+              <div className="flex flex-col items-center">
+                <div className="relative w-48 h-48 mb-6">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full rounded-full object-cover border-4 border-blue-500 dark:border-blue-400"
+                  />
+                  <div className="absolute bottom-0 right-0 bg-white dark:bg-gray-800 rounded-full p-2 border-2 border-blue-500 dark:border-blue-400">
+                    <member.icon className="h-6 w-6 text-blue-500 dark:text-blue-400" />
+                  </div>
+                </div>
+
+                <div className="text-center mb-6">
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{member.name}</h2>
                   <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{member.role}</p>
                   <p className="text-gray-600 dark:text-gray-300 italic mb-4">{member.currentPosition}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{member.education}</p>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6 w-full">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Expertise</h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {member.expertise.map((skill) => (
                       <span
                         key={skill}
@@ -113,7 +115,7 @@ const About = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 mb-6">{member.bio}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">{member.bio}</p>
 
                 <div className="flex space-x-4">
                   <a
@@ -148,10 +150,10 @@ const About = () => {
         >
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Notre Histoire</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Fondée par Moussa Kalla et Moustapha Maman Sani, Data & AI Factory est née de leur vision commune : démocratiser l'accès à l'Intelligence Artificielle et aux solutions data-driven pour toutes les entreprises. Combinant leurs expertises complémentaires en Data Science, Machine Learning, développement web et infrastructure réseau, ils ont créé une entreprise capable d'offrir des solutions complètes et innovantes.
+            Fondée par Moussa Kalla et Moustapha Maman Sani, BayanAI est née de leur vision commune : démocratiser l'accès à l'Intelligence Artificielle et aux solutions data-driven pour toutes les entreprises. Combinant leurs expertises complémentaires en Data Science, Machine Learning, développement web et infrastructure réseau, ils ont créé une entreprise capable d'offrir des solutions complètes et innovantes.
           </p>
           <p className="text-gray-600 dark:text-gray-300">
-            Aujourd'hui, Data & AI Factory s'est imposée comme un acteur majeur dans le domaine de l'IA et de la Data Science, accompagnant les entreprises dans leur transformation numérique avec des solutions sur mesure et une expertise pointue. Notre engagement envers l'innovation et l'excellence technique reste au cœur de notre mission.
+            Aujourd'hui, BayanAI s'est imposée comme un acteur majeur dans le domaine de l'IA et de la Data Science, accompagnant les entreprises dans leur transformation numérique avec des solutions sur mesure et une expertise pointue. Notre engagement envers l'innovation et l'excellence technique reste au cœur de notre mission.
           </p>
         </motion.div>
       </div>

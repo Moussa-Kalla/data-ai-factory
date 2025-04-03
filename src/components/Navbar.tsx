@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Brain, LineChart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import LanguageSwitch from './LanguageSwitch';
 import ThemeSwitch from './ThemeSwitch';
+import BayanAILogo from './icons/BayanAILogo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 shadow-lg backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <motion.div 
@@ -28,9 +28,8 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Link to="/" className="flex items-center">
-              <Brain className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              <LineChart className="h-8 w-8 text-purple-600 dark:text-purple-400 -ml-2" />
-              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">Data & AI Factory</span>
+              <BayanAILogo className="w-14 h-14 mr-2" />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">BayanAI</span>
             </Link>
           </motion.div>
 
@@ -51,7 +50,6 @@ const Navbar = () => {
               </motion.div>
             ))}
             <div className="flex items-center space-x-4">
-              <LanguageSwitch />
               <ThemeSwitch />
             </div>
           </div>
@@ -59,7 +57,6 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
             <div className="flex items-center space-x-4">
-              <LanguageSwitch />
               <ThemeSwitch />
             </div>
             <button
@@ -75,7 +72,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <motion.div 
-          className="md:hidden"
+          className="md:hidden absolute w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >

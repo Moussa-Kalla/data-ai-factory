@@ -8,6 +8,7 @@ import CaseStudies from './pages/CaseStudies';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import WhatsAppButton from './components/WhatsAppButton';
 import './i18n';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
@@ -26,6 +27,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );
