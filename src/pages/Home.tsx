@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const Home = () => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
-  const expertiseRef = useRef<HTMLElement>(null);
+  const caseStudiesRef = useRef<HTMLElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const { scrollYProgress } = useScroll();
@@ -32,10 +32,10 @@ const Home = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Auto-scroll to expertise section after delay
+  // Auto-scroll to case studies section after delay
   useEffect(() => {
     const timer = setTimeout(() => {
-      expertiseRef.current?.scrollIntoView({ 
+      caseStudiesRef.current?.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
@@ -81,7 +81,7 @@ const Home = () => {
 
   const featuredCases = [
     {
-      title: t('caseStudies.cases.agriculture.title'),
+      title: "Optimisation des Rendements",
       image: "https://github.com/Moussa-Kalla/data-ai-factory/blob/main/assets/OptimisationAgricoleNiger.png?raw=true",
       category: t('caseStudies.categories.agriculture')
     },
@@ -189,7 +189,6 @@ const Home = () => {
 
       {/* Services Overview */}
       <motion.section 
-        ref={expertiseRef}
         className="py-24 bg-white dark:bg-gray-800 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -235,6 +234,7 @@ const Home = () => {
 
       {/* Featured Case Studies Section */}
       <motion.section
+        ref={caseStudiesRef}
         className="py-24 bg-gray-50 dark:bg-gray-900"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
