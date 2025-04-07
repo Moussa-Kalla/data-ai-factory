@@ -6,7 +6,7 @@ startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pou
 
 ## Aperçu
 
-[apercu](https://github.com/Moussa-Kalla/BayanAI/blob/mk_dev/assets/screenshoot.png?raw=true)
+![apercu](https://github.com/Moussa-Kalla/BayanAI/blob/mk_dev/assets/screenshoot.png?raw=true)
 
 ## Technologies Utilisées
 
