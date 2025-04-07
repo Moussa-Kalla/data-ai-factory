@@ -4,6 +4,10 @@ startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pou
 
 > Accédez au site web ici : [www.bayanai.fr](https://www.bayanai.fr/)
 
+## Aperçu
+
+[apercu](https://github.com/Moussa-Kalla/BayanAI/blob/mk_dev/assets/screenshoot.png?raw=true)
+
 ## Technologies Utilisées
 
 - React 18
