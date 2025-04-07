@@ -17,8 +17,8 @@ BayanAI est une entreprise spécialisée dans la Data Science et l'Intelligence 
 
 1. Clonez le dépôt :
 ```bash
-git clone https://github.com/votre-username/data-ai-factory-website.git
-cd data-ai-factory-website
+git clone https://github.com/Moussa-Kalla/BayanAI.git
+cd BayanAI
 ```
 
 2. Installez les dépendances :
@@ -72,4 +72,4 @@ Pour toute question ou suggestion :
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détail
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.

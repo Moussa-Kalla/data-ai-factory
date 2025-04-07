@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import WhatsAppLogo from './icons/WhatsAppLogo';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+33744885914';
+  const phoneNumber = '+33695295580';
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
