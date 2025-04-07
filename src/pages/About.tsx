@@ -29,57 +29,23 @@ const About = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
     <div className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.h1 
-            variants={itemVariants}
-            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
-          >
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Notre Équipe Fondatrice
-          </motion.h1>
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-          >
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Une équipe passionnée combinant expertise technique et vision innovante pour transformer le monde des données et de l'IA.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {team.map((member) => (
             <motion.div
               key={member.name}
-              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8"
             >
               <div className="flex flex-col items-center">
@@ -140,14 +106,9 @@ const About = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
-        >
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Notre Histoire</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             Fondée par Moussa Kalla et Moustapha Maman Sani, BayanAI est née de leur vision commune : démocratiser l'accès à l'Intelligence Artificielle et aux solutions data-driven pour toutes les entreprises. Combinant leurs expertises complémentaires en Data Science, Machine Learning, développement web et infrastructure réseau, ils ont créé une entreprise capable d'offrir des solutions complètes et innovantes.
@@ -155,7 +116,7 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-300">
             Aujourd'hui, BayanAI s'est imposée comme un acteur majeur dans le domaine de l'IA et de la Data Science, accompagnant les entreprises dans leur transformation numérique avec des solutions sur mesure et une expertise pointue. Notre engagement envers l'innovation et l'excellence technique reste au cœur de notre mission.
           </p>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -90,10 +90,13 @@ const Contact = () => {
                     <h3 className="font-semibold text-gray-900 dark:text-white">{t('contact.info.phone')}</h3>
                     <div className="space-y-1">
                       <p className="text-gray-600 dark:text-gray-300">
-                        France: <a href="tel:+33744885914" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+33 744 885 914</a>
+                        France: <a href="tel:+33695295580" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+33 6 95 29 55 80</a>
                       </p>
                       <p className="text-gray-600 dark:text-gray-300">
                         Niger: <a href="tel:+22780068056" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+227 80 06 80 56</a>
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        Niger: <a href="tel:+22792879458" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+227 92 87 94 58</a>
                       </p>
                     </div>
                   </div>
@@ -104,20 +107,12 @@ const Contact = () => {
                     <h3 className="font-semibold text-gray-900 dark:text-white">WhatsApp</h3>
                     <div className="space-y-1">
                       <a 
-                        href="https://wa.me/33744885914"
+                        href="https://wa.me/33695295580"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
-                        +33 744 885 914
-                      </a>
-                      <a 
-                        href="https://wa.me/22780068056"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        +227 80 06 80 56
+                        +33 6 95 29 55 80
                       </a>
                     </div>
                   </div>

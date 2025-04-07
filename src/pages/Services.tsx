@@ -98,59 +98,24 @@ const Services = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
     <div className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="text-center mb-16"
-        >
-          <motion.h1 
-            variants={itemVariants}
-            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
-          >
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Nos Services
-          </motion.h1>
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-          >
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Des solutions innovantes en Data Science et Intelligence Artificielle pour transformer vos données en avantage concurrentiel.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mb-16"
-        >
+        <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Expertise Principale</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {primaryServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
               >
@@ -168,19 +133,14 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Services Complémentaires</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {additionalServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center"
               >
@@ -190,14 +150,9 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Prêt à Transformer Votre Entreprise ?
           </h2>
@@ -212,7 +167,7 @@ const Services = () => {
           >
             Démarrer Votre Projet
           </motion.button>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

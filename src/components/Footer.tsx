@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { Linkedin, Mail, Github } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import BayanAILogo from './icons/BayanAILogo';
 
@@ -35,13 +35,26 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-white">
+              <a
+                href="https://www.linkedin.com/company/BayanAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 dark:text-gray-300 hover:text-white"
+              >
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-white">
-                <Twitter className="h-6 w-6" />
+              <a
+                href="https://github.com/Moussa-Kalla/BayanAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 dark:text-gray-300 hover:text-white"
+              >
+                <Github className="h-6 w-6" />
               </a>
-              <a href="mailto:data.ai.factory@gmail.com" className="text-gray-400 dark:text-gray-300 hover:text-white">
+              <a
+                href="mailto:data.ai.factory@gmail.com"
+                className="text-gray-400 dark:text-gray-300 hover:text-white"
+              >
                 <Mail className="h-6 w-6" />
               </a>
             </div>
