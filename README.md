@@ -44,4 +44,15 @@ Le site utilise une palette de couleurs moderne :
 
 Pour toute question ou suggestion :
 - Email : contact.bayanai@gmail.com
-- WhatsApp : +33 744 885 914 
+- WhatsApp : +33 6 95 29 55 80
+
+
+<a href="https://wa.me/+33 6 95 29 55 80" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" width="40" style="margin-right:10px;"/>
+</a>
+<a href="mailto:contact.bayanai@gmail.com">
+  <img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="40" style="margin-right:10px;"/>
+</a>
+<a href="https://www.linkedin.com/company/BayanAI" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" width="40"/>
+</a>
