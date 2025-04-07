@@ -2,7 +2,7 @@
 > BayanAI est une
 startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pour transformer les Données et impémenter des solutions d'Inteligence Artificielle avec avantage concurrentiel.
 
-> Accédez au site web ici : [www.bayanai.fr](bayanai.fr)
+> Accédez au site web ici : [www.bayanai.fr](https://www.bayanai.fr/)
 
 ## Technologies Utilisées
 
