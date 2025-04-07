@@ -49,7 +49,7 @@ Le site utilise une palette de couleurs moderne :
 Pour toute question ou suggestion :
 
 [![WhatsApp](https://img.icons8.com/color/48/000000/whatsapp.png)](https://wa.me/+33695295580)
-[![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](www.linkedin.com/company/BayanAI)
+[![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/company/BayanAI/)
 [![Email](https://img.icons8.com/color/48/000000/email.png)](mailto:contact.bayanai@gmail.com)
 
 - Email : contact.bayanai@gmail.com
