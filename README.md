@@ -47,7 +47,12 @@ Pour toute question ou suggestion :
 - WhatsApp : +33 6 95 29 55 80
 
 
-<a href="https://wa.me/+33 6 95 29 55 80" target="_blank">
+[![WhatsApp](https://img.icons8.com/color/48/000000/whatsapp.png)](https://wa.me/+33695295580)
+[![Email](https://img.icons8.com/color/48/000000/email.png)](mailto:contact.bayanai@gmail.com)
+[![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](www.linkedin.com/company/BayanAI)
+
+
+<a href="https://wa.me/+33695295580" target="_blank">
   <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" width="40" style="margin-right:10px;"/>
 </a>
 <a href="mailto:contact.bayanai@gmail.com">
