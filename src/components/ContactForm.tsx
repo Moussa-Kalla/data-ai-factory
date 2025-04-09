@@ -14,26 +14,34 @@ const ContactForm = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setIsLoading(true);
+
     try {
-      await emailjs.sendForm(
-        'service_bayanai', // Service ID from EmailJS
-        'template_bayanai', // Template ID from EmailJS
+      const result = await emailjs.sendForm(
+        'service_th1nbwd',
+        'template_4re6ojs',
         form.current!,
-        'YOUR_PUBLIC_KEY' // Public Key from EmailJS
+        '7v5vtrw23vauXlEjX'
       );
 
-      setIsSubmitted(true);
-      setIsError(false);
-      setFormState({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 5000);
+      if (result.text === 'OK') {
+        setIsSubmitted(true);
+        setIsError(false);
+        setFormState({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        throw new Error('Failed to send email');
+      }
     } catch (error) {
       console.error('Error sending email:', error);
       setIsError(true);
       setTimeout(() => setIsError(false), 5000);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -84,7 +92,7 @@ const ContactForm = () => {
             required
           />
         </div>
-        
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {t('contact.form.email')}
@@ -134,12 +142,12 @@ const ContactForm = () => {
           type="submit"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full bg-blue-600 dark:bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+          className="w-full bg-blue-600 dark:bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors flex justify-center items-center"
+          disabled={isLoading}
         >
-          {t('contact.form.submit')}
+          {isLoading ? 'Envoi en cours...' : t('contact.form.submit')}
         </motion.button>
 
-        {/* Hidden input for the recipient email */}
         <input 
           type="hidden" 
           name="to_email" 
