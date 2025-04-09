@@ -2,7 +2,26 @@
 > BayanAI est une
 startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pour transformer les Données et impémenter des solutions d'Inteligence Artificielle avec avantage concurrentiel.
 
-> Accédez au site web ici : [www.bayanai.fr](www.bayanai.fr)
+> Accédez au site web ici : [www.bayanai.fr](https://www.bayanai.fr/)
+
+## Aperçu
+
+![apercu](https://github.com/Moussa-Kalla/BayanAI/blob/mk_dev/assets/screenshoot.png?raw=true)
+
+## 📁 Architecture : 
+
+## Run en localhost :
+
+```bash
+git clone https://github.com/Moussa-Kalla/BayanAI
+```
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
 
 ## Technologies Utilisées
 
@@ -43,5 +62,15 @@ Le site utilise une palette de couleurs moderne :
 ## Contact
 
 Pour toute question ou suggestion :
+
+[![WhatsApp](https://img.icons8.com/color/48/000000/whatsapp.png)](https://wa.me/+33695295580)
+[![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/company/BayanAI/)
+[![Email](https://img.icons8.com/color/48/000000/email.png)](mailto:contact.bayanai@gmail.com)
+
 - Email : contact.bayanai@gmail.com
-- WhatsApp : +33 744 885 914 
+- Tel : +33 6 95 29 55 80
+
+
+
+
+
