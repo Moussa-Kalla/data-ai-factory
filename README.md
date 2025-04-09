@@ -142,6 +142,7 @@ BayanAI
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
+```
 
 ## Run en localhost :
 
