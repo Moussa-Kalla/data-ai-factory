@@ -10,6 +10,7 @@ startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pou
 
 ## 📁 Architecture : 
 
+```bash
 BayanAI
 ├── .github
     └── workflows
@@ -67,6 +68,7 @@ BayanAI
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
+```
 
 ## Run en localhost :
 
