@@ -8,21 +8,6 @@ startup spécialisée dans la Data et l'IA, offrant des solutions innovantes pou
 
 ![apercu](https://github.com/Moussa-Kalla/BayanAI/blob/mk_dev/assets/screenshoot.png?raw=true)
 
-## 📁 Architecture : 
-
-## Run en localhost :
-
-```bash
-git clone https://github.com/Moussa-Kalla/BayanAI
-```
-```bash
-npm install
-```
-
-```bash
-npm run dev
-```
-
 ## Technologies Utilisées
 
 - React 18
