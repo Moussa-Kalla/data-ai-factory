@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@formspree/react": "^3.0.0",
     "@headlessui/react": "^1.7.18",
     "framer-motion": "^11.0.8",
     "i18next": "^23.10.1",
