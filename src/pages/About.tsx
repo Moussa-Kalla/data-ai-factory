@@ -5,6 +5,17 @@ import { Github, Linkedin, Network, Code, Database, Brain } from 'lucide-react';
 const About = () => {
   const team = [
     {
+      name: 'Moustapha Maman Sani',
+      role: 'Co-Fondateur',
+      currentPosition: 'Ingénieur Superviseur Réseau chez Camusat, Niamey, Niger',
+      education: 'Diplômé en Informatique & Télécommunications, ESM/ESG Groupe Sodesi',
+      expertise: ['Développement Web', 'Développement Mobile', 'Ingénierie Réseau', 'Télécommunications'],
+      bio: "Moustapha Maman Sani est développeur Web & Mobile et Ingénieur Réseau & Télécom. Ingénieur Superviseur Réseau chez Camusat, il maîtrise l'architecture réseau, le développement logiciel et l'administration système, garantissant des solutions technologiques fiables et évolutives.",
+      image: 'https://github.com/Moussa-Kalla/data-ai-factory/blob/mk_dev/assets/Moustapha.jpeg?raw=true',
+      linkedin: 'https://linkedin.com/in/moustapha-maman-sani-abdou-19189aa1',
+      icon: Network
+    },
+    {
       name: 'Moussa Kalla',
       role: 'CEO & Co-Fondateur',
       currentPosition: 'Data Scientist & ML Engineer chez Saft (TotalEnergies), France',
@@ -15,17 +26,6 @@ const About = () => {
       linkedin: 'https://linkedin.com/in/moussa-kalla',
       github: 'https://github.com/Moussa-Kalla',
       icon: Brain
-    },
-    {
-      name: 'Moustapha Maman Sani',
-      role: 'Co-Fondateur',
-      currentPosition: 'Ingénieur Superviseur Réseau chez Camusat, Niamey, Niger',
-      education: 'Diplôme en Informatique & Télécommunications, ESM/ESG Groupe Sodesi',
-      expertise: ['Développement Web', 'Développement Mobile', 'Ingénierie Réseau', 'Télécommunications'],
-      bio: "Moustapha Maman Sani est développeur Web & Mobile et Ingénieur Réseau & Télécom. Ingénieur Superviseur Réseau chez Camusat, il maîtrise l'architecture réseau, le développement logiciel et l'administration système, garantissant des solutions technologiques fiables et évolutives.",
-      image: 'https://github.com/Moussa-Kalla/data-ai-factory/blob/mk_dev/assets/Moustapha.jpeg?raw=true',
-      linkedin: 'https://linkedin.com/in/moustapha-maman-sani-abdou-19189aa1',
-      icon: Network
     },
     {
       name: 'Ahmed Abdoulahi',
