@@ -1,61 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const { t } = useTranslation();
-  const form = useRef<HTMLFormElement>(null);
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const result = await emailjs.sendForm(
-        'service_th1nbwd',
-        'template_4re6ojs',
-        form.current!,
-        '7v5vtrw23vauXlEjX'
-      );
-
-      if (result.text === 'OK') {
-        setIsSubmitted(true);
-        setIsError(false);
-        setFormState({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setIsError(true);
-      setTimeout(() => setIsError(false), 5000);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value
-    });
-  };
+  const [state, handleSubmit] = useForm("xeoavawv");
 
   return (
     <div className="relative">
       <AnimatePresence>
-        {isSubmitted && (
+        {state.succeeded && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,19 +20,9 @@ const ContactForm = () => {
             {t('contact.form.success')}
           </motion.div>
         )}
-        {isError && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="absolute top-0 left-0 right-0 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 p-4 rounded-md mb-4"
-          >
-            Une erreur s'est produite. Veuillez réessayer plus tard.
-          </motion.div>
-        )}
       </AnimatePresence>
 
-      <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {t('contact.form.name')}
@@ -86,11 +31,10 @@ const ContactForm = () => {
             type="text"
             id="name"
             name="name"
-            value={formState.name}
-            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             required
           />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
 
         <div>
@@ -101,11 +45,10 @@ const ContactForm = () => {
             type="email"
             id="email"
             name="email"
-            value={formState.email}
-            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             required
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
 
         <div>
@@ -116,11 +59,10 @@ const ContactForm = () => {
             type="text"
             id="subject"
             name="subject"
-            value={formState.subject}
-            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             required
           />
+          <ValidationError prefix="Subject" field="subject" errors={state.errors} />
         </div>
 
         <div>
@@ -131,11 +73,10 @@ const ContactForm = () => {
             id="message"
             name="message"
             rows={4}
-            value={formState.message}
-            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
             required
           />
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
         </div>
 
         <motion.button
@@ -143,11 +84,12 @@ const ContactForm = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="w-full bg-blue-600 dark:bg-blue-500 text-white py-3 px-6 rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors flex justify-center items-center"
-          disabled={isLoading}
+          disabled={state.submitting}
         >
-          {isLoading ? 'Envoi en cours...' : t('contact.form.submit')}
+          {state.submitting ? 'Envoi en cours...' : t('contact.form.submit')}
         </motion.button>
 
+        {/* Champ caché pour le destinataire si nécessaire */}
         <input 
           type="hidden" 
           name="to_email" 
