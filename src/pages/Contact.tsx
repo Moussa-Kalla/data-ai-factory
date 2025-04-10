@@ -94,6 +94,7 @@ const Contact = () => {
                       </p>
                       <p className="text-gray-600 dark:text-gray-300">
                         Niger: <a href="tel:+22780068056" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+227 80 06 80 56</a>
+                        Niger: <a href="tel:+22792879458" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+227 92 87 94 58</a>
                       </p>
                       <p className="text-gray-600 dark:text-gray-300">
                         Niger: <a href="tel:+22792879458" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">+227 92 87 94 58</a>
