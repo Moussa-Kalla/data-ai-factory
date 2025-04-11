@@ -7,6 +7,12 @@ import BayanAILogo from './icons/BayanAILogo';
 const Footer = () => {
   const { t } = useTranslation();
 
+  const handleCookiePreferences = () => {
+    // Réinitialiser le consentement pour permettre à l'utilisateur de rechoisir
+    document.cookie = "cookie_consent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.reload();
+  };
+
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -29,12 +35,13 @@ const Footer = () => {
               <li><Link to="/etudes-de-cas" className="text-gray-400 dark:text-gray-300 hover:text-white">{t('nav.caseStudies')}</Link></li>
               <li><Link to="/blog" className="text-gray-400 dark:text-gray-300 hover:text-white">{t('nav.blog')}</Link></li>
               <li><Link to="/contact" className="text-gray-400 dark:text-gray-300 hover:text-white">{t('nav.contact')}</Link></li>
+              <li><Link to="/politique-de-confidentialite" className="text-gray-400 dark:text-gray-300 hover:text-white">Politique de confidentialité</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               <a
                 href="https://www.linkedin.com/company/BayanAI"
                 target="_blank"
@@ -58,6 +65,14 @@ const Footer = () => {
                 <Mail className="h-6 w-6" />
               </a>
             </div>
+
+            {/* Ajout bouton gestion cookies */}
+            <button
+              onClick={handleCookiePreferences}
+              className="text-sm text-gray-400 dark:text-gray-300 hover:text-white underline"
+            >
+              Gérer mes cookies
+            </button>
           </div>
         </div>
         

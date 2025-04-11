@@ -10,11 +10,14 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import './i18n';
+import { CookieConsent } from "./components/CookieConsent";
+import CookieManager from "./components/CookieManager";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 // Scroll to top component
 const ScrollToTop = () => {
   const location = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -37,11 +40,14 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           </Routes>
         </main>
         <Footer />
         <WhatsAppButton />
       </div>
+      <CookieConsent /> {/* Ajout ici */}
+      <CookieManager /> {/* Ajout ici */}
     </Router>
   );
 }
