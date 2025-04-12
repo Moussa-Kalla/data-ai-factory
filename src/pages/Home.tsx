@@ -282,7 +282,7 @@ const Home = () => {
       >
         <ParticleEffect />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80)',
             filter: 'brightness(0.3)',
@@ -292,7 +292,7 @@ const Home = () => {
           {/* Texte animé en streaming avec le même style que l'ancien H1 */}
           <motion.div
             key={animationKey} // redémarre l'animation
-            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-400 whitespace-normal break-words"
+            className="text-6xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-400 whitespace-normal break-words"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
