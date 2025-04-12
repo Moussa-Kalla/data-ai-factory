@@ -291,17 +291,22 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
           {/* Texte animé en streaming avec le même style que l'ancien H1 */}
           <motion.div
-            key={animationKey} // modification de la key pour redémarrer l'animation
+            key={animationKey} // redémarre l'animation
             className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-300 whitespace-normal break-words"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {streamingText.split("").map((char, index) => (
-              <motion.span key={index} variants={letterVariants}>
-                {char === " " ? "\u00A0" : char}
+            {streamingText.split("").map((char, index) =>
+              <motion.span 
+                key={index} 
+                variants={letterVariants} 
+                className="inline-block"
+                style={char === " " ? { marginRight: "0.25em" } : {}}
+              >
+                {char}
               </motion.span>
-            ))}
+            )}
           </motion.div>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-white dark:text-gray-100">
             {t('home.hero.subtitle')}
