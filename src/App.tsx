@@ -10,7 +10,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import './i18n';
-import { CookieConsent } from "./components/CookieConsent";
 import CookieManager from "./components/CookieManager";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
@@ -46,7 +45,6 @@ function App() {
         <Footer />
         <WhatsAppButton />
       </div>
-      <CookieConsent /> {/* Ajout ici */}
       <CookieManager /> {/* Ajout ici */}
     </Router>
   );

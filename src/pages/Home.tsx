@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { 
@@ -243,6 +243,32 @@ const Home = () => {
     );
   };
 
+  const streamingText = "Libérez le Potentiel de vos Données";
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.02 } // plus rapide, réduire pour accélérer la révélation
+    }
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.2 } // durée de l'animation de chaque lettre
+    }
+  };
+
+  const [animationKey, setAnimationKey] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimationKey((prev) => prev + 1);
+    }, 3000); // toutes les 2 secondes
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div ref={containerRef} className="relative">
       {/* Hero Section */}
@@ -263,9 +289,20 @@ const Home = () => {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-300">
-            {t('home.hero.title')}
-          </h1>
+          {/* Texte animé en streaming avec le même style que l'ancien H1 */}
+          <motion.div
+            key={animationKey} // modification de la key pour redémarrer l'animation
+            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-300"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {streamingText.split("").map((char, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.div>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-white dark:text-gray-100">
             {t('home.hero.subtitle')}
           </p>
