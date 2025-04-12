@@ -248,7 +248,7 @@ const Home = () => {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.04 } // plus rapide, réduire pour accélérer la révélation
+      transition: { staggerChildren: 0.02 } // plus rapide, réduire pour accélérer la révélation
     }
   };
 
@@ -265,7 +265,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey((prev) => prev + 1);
-    }, 2000); // toutes les 2 secondes
+    }, 3000); // toutes les 2 secondes
     return () => clearInterval(interval);
   }, []);
 
