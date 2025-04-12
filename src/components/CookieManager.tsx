@@ -24,7 +24,7 @@ const CookieManager = () => {
             </p>
             <div className="flex gap-2">
                 <button
-                    className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition"
+                    className="bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition"
                     onClick={() => handleConsent("refused")}
                 >
                     Refuser tout
