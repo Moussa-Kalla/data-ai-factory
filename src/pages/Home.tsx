@@ -248,7 +248,7 @@ const Home = () => {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.02 } // plus rapide, réduire pour accélérer la révélation
+      transition: { staggerChildren: 0.017 } // plus rapide, réduire pour accélérer la révélation
     }
   };
 
@@ -297,16 +297,28 @@ const Home = () => {
             initial="hidden"
             animate="visible"
           >
-            {streamingText.split("").map((char, index) =>
-              <motion.span 
-                key={index} 
-                variants={letterVariants} 
-                className="inline-block"
-                style={char === " " ? { marginRight: "0.25em" } : {}}
-              >
-                {char}
-              </motion.span>
-            )}
+            {streamingText.split(" ").map((word, wordIndex, allWords) => (
+              <span key={wordIndex} className="inline-block whitespace-nowrap">
+                {word.split("").map((char, charIndex) => (
+                  <motion.span 
+                    key={`${wordIndex}-${charIndex}`} 
+                    variants={letterVariants} 
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                {wordIndex < allWords.length - 1 && (
+                  <motion.span 
+                    variants={letterVariants} 
+                    className="inline-block"
+                    style={{ marginRight: "0.25em" }}
+                  >
+                    {" "}
+                  </motion.span>
+                )}
+              </span>
+            ))}
           </motion.div>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-white dark:text-gray-100">
             {t('home.hero.subtitle')}
