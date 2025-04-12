@@ -292,7 +292,7 @@ const Home = () => {
           {/* Texte animé en streaming avec le même style que l'ancien H1 */}
           <motion.div
             key={animationKey} // redémarre l'animation
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-300 whitespace-normal break-words"
+            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-green-400 dark:from-orange-300 dark:to-green-400 whitespace-normal break-words"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
